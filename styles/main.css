@@ -1,0 +1,25 @@
+.dj {
+    display: flex;
+    flex-wrap: wrap;
+   /* background: blue; */
+    flex-direction: column;
+  }
+  
+  button {width: 25%;}
+
+fieldset {
+   display: flex;
+   flex-wrap: wrap; 
+   /* background: blue; */
+   flex-direction: column;
+   width: 75%;
+  }
+
+  .concept__text {
+
+    color: blue;
+    font-size: 2em;
+    font-style: oblique;
+    padding-top: 1em;
+
+  }

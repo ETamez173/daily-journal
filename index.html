@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
+</head>
+
+<body>
+    <h1>Daily Journal</h1>
+    <div class="dj">
+        <fieldset class="fs">
+            <label for="journalDate">Date of Entry</label>
+            <input type="date" name="journalDate" id="journalDate">
+        </fieldset>
+        <fieldset class="fs">
+            <label for="concepts">Concepts Covered</label>
+            <input type="text" id="concepts" name="concepts" required minlength="10" maxlength="20" size="20">
+        </fieldset>
+
+      
+        <fieldset>
+            <label for="journalEntry">Journal Entry</label>
+            <textarea rows="5" cols="50"></textarea>
+        </fieldset>
+
+        <fieldset class="fs">
+            <label for="mood">How did you feel about the topic?</label>
+            <select>
+                <option value=""></option>
+                <option value="Great">Great!</option>
+                <option value="Good">Good</option>
+                <option value="Sad">Sad</option>
+                <option value="???">???</option>
+            </select>
+        </fieldset>
+        <button type="button">Record Journal Entry</button>
+    </div>
+    <article id="#entryLog"  class="entry__log" class="content">
+
+
+    </article>
+
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>
