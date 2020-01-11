@@ -3,9 +3,161 @@
     flex-wrap: wrap;
    /* background: blue; */
     flex-direction: column;
+
+    justify-content: center;
   }
   
   button {width: 25%;}
+
+
+
+.container {
+
+  display: flex;
+  flex-direction: column;
+  flex-basis: 10%;
+  padding: 1%;
+  background-color: slateblue;
+  margin:1%;
+  border: 1px solid black;
+  font-family:  Arial, Helvetica, sans-serif;
+
+  padding: 20px 10px 20px 10px;
+  border-radius: 25px; 
+
+  /* max-width: 50%; */
+}
+
+
+.JournalFormContainer {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 75%;
+
+  flex-direction: row;
+
+  justify-content: space-evenly;
+  /* background-color: palegreen; */
+
+}
+
+
+
+.form__fields {
+
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-basis: 60%;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+.journal__listing {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-basis: 10%;
+  align-content: center;
+    justify-content: center;
+
+ 
+}
+
+.journalEntry {
+
+  flex-basis: 10%;
+
+  background-color: lightgoldenrodyellow;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       
+    font-family:  Arial, Helvetica, sans-serif;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid black;
+    border-radius: 15px; 
+    font-size: 1em;
+    font-weight: bold;
+
+  
+
+
+
+}
+
+#journalDate {
+
+
+    background-color: lightskyblue;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       
+    font-family:  Arial, Helvetica, sans-serif;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid black;
+    border-radius: 5px; 
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+.entryButton__area {
+
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: row;
+  flex-basis: 10%;
+  /* align-content: center; */
+    justify-content: space-evenly;
+}
+
+.journalButton__area {
+
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: row;
+  flex-basis: 10%;
+  align-content: flex-start;
+    justify-content: space-evenly;
+}
+
+
+#saveJournal, #showJournals {
+
+  background-color: salmon;
+  /* background-color: orange; */
+  min-width: 10%;
+  max-width: 15%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     
+  font-family:  Arial, Helvetica, sans-serif;
+  padding: 5px 5px 5px 5px;
+  border: 1px solid black;
+  border-radius: 5px; 
+  font-size: .75em;
+  font-weight: bold;
+}
+
+.journal__editButton, .journal__deleteButton {
+
+
+  background-color: orange;
+  min-width: 20%;
+  max-width: 25%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     
+  font-family:  Arial, Helvetica, sans-serif;
+  padding: 5px 5px 5px 5px;
+  border: 1px solid black;
+  border-radius: 5px; 
+  font-size: .75em;
+  font-weight: bold;
+}
+
 
 fieldset {
    display: flex;
@@ -15,11 +167,100 @@ fieldset {
    width: 75%;
   }
 
+h1 {
+  color: whitesmoke;
+  font-size: 2em;
+  font-style: oblique;
+  padding-top: 1em;
+  text-align: center;
+
+}
+
+
+.dropdown
+ {
+    position: relative;
+    display: inline-block;
+  
+    /* display: none; */
+    /* position: absolute; */
+    background-color: lightskyblue;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       
+    font-family:  Arial, Helvetica, sans-serif;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid black;
+    border-radius: 5px; 
+    font-size: 1em;
+    font-weight: bold;
+
+ }
+
+
+.fs {
+
+    background-color: none;
+    /* background-color: palegreen; */
+    color: white;
+    font-size: 1em;
+    font-style: oblique;
+    /* padding-top: 1em; */
+    max-width: 100%; 
+    min-width: 25%; 
+
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: row;
+    flex-basis: 40%;
+    /* align-content: center; */
+      justify-content: center;
+
+
+
+
+}
+
   .concept__text {
 
     color: blue;
-    font-size: 2em;
+    font-size: 1em;
     font-style: oblique;
     padding-top: 1em;
 
+  }
+
+  .entry__text {
+
+    color: red;
+    font-size: 1em;
+    font-style: oblique;
+    padding-top: 1em;
+
+  }
+
+  .entry__date {
+
+    color:black;
+    font-size: 1em;
+    font-style: oblique;
+    padding-top: 1em;
+
+  }
+
+.entry__mood {
+
+    color:purple;
+    font-size: 1em;
+    font-style: oblique;
+    padding-top: 1em;
+
+}
+
+  #concepts, #journalText {
+ 
+    padding: 5px 5px 5px 5px;
+    border: 1px solid black;
+    border-radius: 5px; 
+   
   }

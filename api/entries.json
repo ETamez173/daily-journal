@@ -1,0 +1,46 @@
+{
+  "entries": [
+    {
+      "date": "07/24/2025",
+      "concept": "HTML & CSS",
+      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+      "mood": "Ok",
+      "id": 1
+    },
+    {
+      "date": "11/25/2019",
+      "concept": "Automating Javascript",
+      "entry": "We talked about how to automate our javasript to create HTML.",
+      "mood": "Ok",
+      "id": 2
+    },
+    {
+      "date": "11/26/2019",
+      "concept": "Data Flow and Javascript",
+      "entry": "We talked about how we need to understand the data flow of things when we are automating our HTML.",
+      "mood": "Ok",
+      "id": 3
+    },
+    {
+      "date": "2020-01-05",
+      "concept": "Advanced Nap Taking",
+      "entry": "We napped for hours",
+      "mood": "Great",
+      "id": 6
+    },
+    {
+      "date": "",
+      "concept": "Testing ",
+      "entry": "Test new entry after mods",
+      "mood": "Great",
+      "id": 7
+    },
+    {
+      "date": "2020-01-06",
+      "concept": "Chapters 10, 11, and 12 ",
+      "entry": "Steve went over the edit and more advanced ",
+      "mood": "Good",
+      "id": 8
+    }
+  ]
+}

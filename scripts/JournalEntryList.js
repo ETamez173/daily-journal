@@ -4,39 +4,130 @@
  *    there are items in the collection exposed by the
  *    data provider component
  */
-import { useJournalEntries } from "./JournalDataProvider.js"
-import JournalEntryComponent from "./JournalEntry.js"
+import { useJournals, getJournals, saveJournalEntry, deleteJournalEntry } from "./JournalDataProvider.js"
+
+
+const eventHub = document.querySelector("#appContainer")
+// const contentTarget = document.querySelector(".container")
+const contentTarget = document.querySelector(".journal__listing")
 
 // DOM reference to where all entries will be rendered
-const entryLog = document.querySelector(".entry__log")
-// Use the journal entry data from the data provider component
+
+// Use the journal entry data from the data provider component   
+ 
+
+// export default EntryListComponent
+
 const EntryListComponent = () => {
-    const eachEntry = useJournalEntries()
-    
-    console.log(eachEntry)
-    console.log("CODE TO INVOKE HTML of ENTRY NEEDED HERE #1")
+    // same as Notelist in NoteList.js
+/// steve put the DELETE event listner here
 
-    entryLog.innerHTML += `
-    
-    <section class=".entry__Log">
-             <div class="journal__item">
-             ${
-             eachEntry.map(entry => JournalEntryComponent(entry)).join("")
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteEntry--")) {
+
+        const [deletePrefix, entryId] = clickEvent.target.id.split("--")
+        // console.log(clickEvent.target.id)
+        console.log(clickEvent.target.id.split("--"))
+        // console.log(noteId)
+        deleteJournalEntry(entryId).then(
+            () => {
+
+                const theNewJournals = useJournals()
+                render(theNewJournals)
             }
-             </div>
-    </section>
-    
+        )
+    }
+
+})
+
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("editEntry--")) {
+        const [notUsed, entryId] = clickEvent.target.id.split("--")
+        // console.log(clickEvent.target.id.split("--"))
+        // console.log(entryId)
+        /*
+            Let all other components know that the user chose
+            to edit an entry, and attach data to the message
+            so that any listeners know which entry should be
+            edited.
+        */
+        // const message = new CustomEvent("entryEdited")
+        // eventHub.dispatchEvent(message)
+
+            eventHub.dispatchEvent(new CustomEvent("entryEdited", {
+                detail: {
+                    // entryId: clickEvent.target.id.split("--")
+                    entryId: clickEvent.target.id
+                    
+            
+
+            }
+            
+        }))
+        // console.log(clickEvent.target.id.split("--"))
+        // console.log(clickEvent.target.id)
+        console.log(entryId)
         
-
-` 
-}
-
-console.log("CODE TO INVOKE HTML of ENTRY NEEDED HERE #2")
-
-
-export default EntryListComponent
+    }
+  }
+)
+            
 
 
-// console.log(entryLog)
 
-// <p>TEST THE CODE !!!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const renderJournalsAgain = () => {
+        const allJournals = useJournals()
+                // console.log(useJournals)
+        render(allJournals)
+
+    }
+
+   
+    eventHub.addEventListener("showJournalButtonClicked", event => {
+        renderJournalsAgain()
+console.log("This is a test of >>> showJournalButtonClicked ")
+    })
+
+
+// debugger
+const render = (journalsCollection) => {
+    contentTarget.innerHTML = journalsCollection.map((individualEntry) => {
+
+            return `           
+              
+                    <section id="entry--${individualEntry.id}" class="journalEntry">
+                <div class="concept__text"> Concept Covered:  ${individualEntry.concept}</div>
+                <div class="entry__text" > Entry: ${individualEntry.entry}</div>
+                <div class="entry__date"> Date: ${individualEntry.date}</div>
+                <div class="entry__mood"> Mood: ${individualEntry.mood}</div>
+                <br>      
+                <div class="entryButton__area">
+                <button id="editEntry--${individualEntry.id}" class="journal__editButton">Edit</button>
+                <button id="deleteEntry--${individualEntry.id}" class="journal__deleteButton">Delete</button>
+                </div>
+                </section> 
+        
+                    `
+        
+                   }
+                ).join("")
+          }
+    }
+    
+   
+        export default EntryListComponent
+

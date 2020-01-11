@@ -1,0 +1,165 @@
+{
+  "entries": [
+    {
+      "date": "11/26/2019",
+      "concept": "Tacos ",
+      "entry": "We ate tacos",
+      "mood": "Great",
+      "id": 23
+    },
+    {
+      "id": 1,
+      "date": "07/24/2025",
+      "concept": "HTML & CSS",
+      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+      "mood": "Ok"
+    },
+    {
+      "id": 2,
+      "date": "11/25/2019",
+      "concept": "Automating Javascript",
+      "entry": "We talked about how to automate our javasript to create HTML.",
+      "mood": "Ok"
+    },
+    {
+      "id": 3,
+      "date": "11/26/2019",
+      "concept": "Data Flow and Javascript",
+      "entry": "We talked about how we need to understand the data flow of things when we are automating our HTML.",
+      "mood": "Ok"
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 24
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 25
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 26
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 27
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 28
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 29
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 30
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 31
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 32
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 33
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 34
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 35
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 36
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 37
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 38
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 39
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 40
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "",
+      "id": 41
+    },
+    {
+      "date": "2020-01-05",
+      "concept": "Spicey Foods",
+      "entry": "We ate spicey chicken",
+      "mood": "Good",
+      "id": 42
+    }
+  ]
+}
