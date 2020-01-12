@@ -43,7 +43,22 @@ const setJournals = (journalArray) => {
 export const useJournals = () => entries.slice()
 // export const useJournals = () => dateSorted.slice()
 
-
+// console.log(noteId)
+export const editJournal = (journalObject) => {
+    // return fetch(`http://localhost:8080/notes/"2"}`, 
+    console.log(journalObject)
+    console.log(journalObject.id)
+    return fetch(`http://localhost:8088/entries/${journalObject.id}`, 
+    {
+     
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(journalObject)
+    })
+    .then(getJournals)
+}
 
 // export const useJournalEntries = () => {
 

@@ -120,25 +120,53 @@
   display: flex;
   flex-wrap: wrap; 
   flex-direction: row;
-  flex-basis: 10%;
-  align-content: flex-start;
-    justify-content: space-evenly;
+  /* flex-basis: 10%; */
+  /* align-content: flex-start; */
+    /* justify-content: left; */
+
+    justify-content: space-around;
+    max-width: 800px;
+
+
 }
 
+
+label {
+
+  color: whitesmoke;
+  font-size: 1.5em;
+  font-style: oblique;
+  padding-top: 1em;
+  text-align: center;
+}
+
+
+
+
+.journalButton__align// {
+  /* justify-content: center; */
+  display: flex;
+  flex-wrap: wrap; 
+  flex-basis: 10%;
+  /* background: blue; */
+  flex-direction: column;
+  align-content: space-around;
+  /* justify-content: center; */
+}
 
 #saveJournal, #showJournals {
 
   background-color: salmon;
   /* background-color: orange; */
-  min-width: 10%;
-  max-width: 15%;
+  /* min-width: 10%;
+  max-width: 15%; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
      
   font-family:  Arial, Helvetica, sans-serif;
-  padding: 5px 5px 5px 5px;
+  padding: 15px 15px 15px 15px;
   border: 1px solid black;
   border-radius: 5px; 
-  font-size: .75em;
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -257,10 +285,42 @@ h1 {
 
 }
 
-  #concepts, #journalText {
+
+.journalDate__align {
+  /* align-items: center; */
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.date__input {
+  display: flex;
+  flex-wrap: wrap;
+ /* background: blue; */
+  flex-direction: column;
+   max-width: 50%;
+
+}
+
+.concepts__input, .journal__input  {
+  display: flex;
+  flex-wrap: wrap;
+ /* background: blue; */
+  flex-direction: column;
+
+}
+
+  #concepts, #journalText, #moodSelect, #journalDate {
  
     padding: 5px 5px 5px 5px;
     border: 1px solid black;
     border-radius: 5px; 
-   
+    justify-content: center;
+    align-items: center;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    font-weight: bold;
   }

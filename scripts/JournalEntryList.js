@@ -12,17 +12,46 @@ const eventHub = document.querySelector("#appContainer")
 const contentTarget = document.querySelector(".journal__listing")
 
 // DOM reference to where all entries will be rendered
-
-// Use the journal entry data from the data provider component   
- 
-
-// export default EntryListComponent
-
 const EntryListComponent = () => {
     // same as Notelist in NoteList.js
 /// steve put the DELETE event listner here
+eventHub.addEventListener("journalHasBeenEdited", event => {
+    const updatedJournals = useJournals()
+    render(updatedJournals)
+
+})
+
+
+
 
 eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("editEntry--")) {
+        const [notUsed, entryId] = clickEvent.target.id.split("--")
+        // console.log(clickEvent.target.id.split("--"))
+        // console.log(entryId)
+        /*
+            Let all other components know that the user chose
+            to edit an entry, and attach data to the message
+            so that any listeners know which entry should be
+            edited.
+        */
+        // const message = new CustomEvent("entryEdited")
+        // eventHub.dispatchEvent(message)
+
+        const editEvent = new CustomEvent("editButtonClicked", {
+            detail: {
+                entryId: entryId
+            }
+
+        })
+        eventHub.dispatchEvent(editEvent)
+
+    }
+
+                    
+
+
+// eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteEntry--")) {
 
         const [deletePrefix, entryId] = clickEvent.target.id.split("--")
@@ -41,53 +70,6 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("editEntry--")) {
-        const [notUsed, entryId] = clickEvent.target.id.split("--")
-        // console.log(clickEvent.target.id.split("--"))
-        // console.log(entryId)
-        /*
-            Let all other components know that the user chose
-            to edit an entry, and attach data to the message
-            so that any listeners know which entry should be
-            edited.
-        */
-        // const message = new CustomEvent("entryEdited")
-        // eventHub.dispatchEvent(message)
-
-            eventHub.dispatchEvent(new CustomEvent("entryEdited", {
-                detail: {
-                    // entryId: clickEvent.target.id.split("--")
-                    entryId: clickEvent.target.id
-                    
-            
-
-            }
-            
-        }))
-        // console.log(clickEvent.target.id.split("--"))
-        // console.log(clickEvent.target.id)
-        console.log(entryId)
-        
-    }
-  }
-)
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     const renderJournalsAgain = () => {
         const allJournals = useJournals()
@@ -99,7 +81,7 @@ eventHub.addEventListener("click", clickEvent => {
    
     eventHub.addEventListener("showJournalButtonClicked", event => {
         renderJournalsAgain()
-console.log("This is a test of >>> showJournalButtonClicked ")
+// console.log("This is a test of >>> showJournalButtonClicked ")
     })
 
 
