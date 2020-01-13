@@ -120,12 +120,12 @@
   display: flex;
   flex-wrap: wrap; 
   flex-direction: row;
-  /* flex-basis: 10%; */
-  /* align-content: flex-start; */
+  flex-basis: 30%;
+  align-content: flex-start;
     /* justify-content: left; */
 
-    justify-content: space-around;
-    max-width: 800px;
+    justify-content: space-evenly;
+    max-width: 80%;
 
 
 }
@@ -324,3 +324,110 @@ h1 {
     font-size: 1.25em;
     font-weight: bold;
   }
+
+
+
+/* .radio__buttonContainer { */
+
+  /* display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; */
+
+
+
+.radio__buttonAlign {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-basis: 10%;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+
+
+}
+
+.form_align  {
+  justify-content: space-around;
+}
+
+.submit__buttonAlign {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fieldset_align  {
+align-items: center;
+  /* justify-content: center; */
+}
+
+
+
+#moodChoice1, #moodChoice2, #moodChoice3, #moodChoice4 {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 45px;
+  background-color: #eee;
+  border-radius: 75%;
+}
+
+.radioButton__label {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-basis: 15%;
+  
+  font-family:  Arial, Helvetica, sans-serif;
+  padding: 5px 5px 5px 5px;
+  border: 1px solid black;
+  border-radius: 5px; 
+  font-size: .75em;
+  font-weight: bold;
+  background-color: sandybrown;
+  min-width: 90px;
+
+
+
+}
+
+.submitMood {
+
+  background-color: salmon;
+  /* background-color: orange; */
+  /* min-width: 10%;
+  max-width: 15%; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     
+  font-family:  Arial, Helvetica, sans-serif;
+  padding: 15px 15px 15px 15px;
+  border: 1px solid black;
+  border-radius: 5px; 
+  font-size: .75em;
+  font-weight: bold;
+
+} 
+
+.mood__text {
+
+  font-family:  Arial, Helvetica, sans-serif;
+  padding: 15px 15px 15px 15px;
+  /* border: 1px solid black; */
+  border-radius: 5px; 
+  font-size: 1em;
+  font-weight: bold;
+  color: blue;
+}  

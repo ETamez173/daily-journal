@@ -105,6 +105,24 @@ const JournalFormComponent = () => {
 
     })
 
+
+
+
+    eventHub.addEventListener("filterMoodButtonClicked", event => {
+       console.log("HEY NEED TO FILTER THE JOURNALS BY MOOD!!")
+// console.log("This is a test of >>> showJournalButtonClicked ")
+
+// const journalMood = allJournalsArray.filter(er => er.mood === entries.mood)
+
+
+
+
+    })
+
+
+
+
+
     /*Add hidden input field to the entry form to store id value of edited entry*/
 
     const render = () => {

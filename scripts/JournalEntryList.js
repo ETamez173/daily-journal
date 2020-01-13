@@ -14,80 +14,132 @@ const contentTarget = document.querySelector(".journal__listing")
 // DOM reference to where all entries will be rendered
 const EntryListComponent = () => {
     // same as Notelist in NoteList.js
-/// steve put the DELETE event listner here
-eventHub.addEventListener("journalHasBeenEdited", event => {
-    const updatedJournals = useJournals()
-    render(updatedJournals)
+    /// steve put the DELETE event listner here
+    eventHub.addEventListener("journalHasBeenEdited", event => {
+        const updatedJournals = useJournals()
+        render(updatedJournals)
 
-})
-
-
+    })
 
 
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("editEntry--")) {
-        const [notUsed, entryId] = clickEvent.target.id.split("--")
-        // console.log(clickEvent.target.id.split("--"))
-        // console.log(entryId)
-        /*
-            Let all other components know that the user chose
-            to edit an entry, and attach data to the message
-            so that any listeners know which entry should be
-            edited.
-        */
-        // const message = new CustomEvent("entryEdited")
-        // eventHub.dispatchEvent(message)
-
-        const editEvent = new CustomEvent("editButtonClicked", {
-            detail: {
-                entryId: entryId
-            }
-
-        })
-        eventHub.dispatchEvent(editEvent)
-
-    }
-
-                    
 
 
-// eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("deleteEntry--")) {
+    eventHub.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id.startsWith("editEntry--")) {
+            const [notUsed, entryId] = clickEvent.target.id.split("--")
+            // console.log(clickEvent.target.id.split("--"))
+            // console.log(entryId)
+            /*
+                Let all other components know that the user chose
+                to edit an entry, and attach data to the message
+                so that any listeners know which entry should be
+                edited.
+            */
+            // const message = new CustomEvent("entryEdited")
+            // eventHub.dispatchEvent(message)
 
-        const [deletePrefix, entryId] = clickEvent.target.id.split("--")
-        // console.log(clickEvent.target.id)
-        console.log(clickEvent.target.id.split("--"))
-        // console.log(noteId)
-        deleteJournalEntry(entryId).then(
-            () => {
+            const editEvent = new CustomEvent("editButtonClicked", {
+                detail: {
+                    entryId: entryId
+                }
 
-                const theNewJournals = useJournals()
-                render(theNewJournals)
-            }
-        )
-    }
+            })
+            eventHub.dispatchEvent(editEvent)
 
-})
+        }
+
+
+
+
+        // eventHub.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id.startsWith("deleteEntry--")) {
+
+            const [deletePrefix, entryId] = clickEvent.target.id.split("--")
+            // console.log(clickEvent.target.id)
+            console.log(clickEvent.target.id.split("--"))
+            // console.log(noteId)
+            deleteJournalEntry(entryId).then(
+                () => {
+
+                    const theNewJournals = useJournals()
+                    render(theNewJournals)
+                }
+            )
+        }
+
+    })
 
 
 
     const renderJournalsAgain = () => {
         const allJournals = useJournals()
-                // console.log(useJournals)
+        // console.log(useJournals)
         render(allJournals)
 
     }
 
-   
+
     eventHub.addEventListener("showJournalButtonClicked", event => {
         renderJournalsAgain()
-// console.log("This is a test of >>> showJournalButtonClicked ")
+        // console.log("This is a test of >>> showJournalButtonClicked ")
     })
+
+
+    /// This is to listen for the radio button click and note the mood returned
+
+    // can alos dispatch a message with new CustomEvent 
+    eventHub.addEventListener("click", event => {
+
+        if (event.target.name === "moodFilter") {
+
+            const mood = event.target.value
+        
+        // console.log(mood)
+        console.log(event.target.value)
+
+        const moodEvent = new CustomEvent("filterMoodButtonClicked", {
+            detail: {
+                mood: mood
+            }
+
+        })
+        eventHub.dispatchEvent(moodEvent)
+
+        }
+
+    })
+//
+// eventHub.addEventListener("click", clickEvent => {
+
+//     if (clickEvent.target.id.startsWith("editEntry--")) {
+//         const [notUsed, entryId] = clickEvent.target.id.split("--")
+       
+
+//         const editEvent = new CustomEvent("editButtonClicked", {
+//             detail: {
+//                 entryId: entryId
+//             }
+
+//         })
+//         eventHub.dispatchEvent(editEvent)
+
+//     }
+
+
+//
+
+
+
+
+
+
+
+
 
 
 // debugger
 const render = (journalsCollection) => {
-    contentTarget.innerHTML = journalsCollection.map((individualEntry) => {
+        contentTarget.innerHTML = journalsCollection.map((individualEntry) => {
 
             return `           
               
@@ -104,12 +156,12 @@ const render = (journalsCollection) => {
                 </section> 
         
                     `
-        
-                   }
-                ).join("")
-          }
+
+        }
+        ).join("")
     }
-    
-   
-        export default EntryListComponent
+}
+
+
+export default EntryListComponent
 
